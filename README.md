@@ -1,5 +1,7 @@
 # Pacman Capture the Flag Contest
 
+This project was done as part of my master's degree in IT in the subject - "AI Planning for Autonomy" with 2 other classmates. The details can be found in TEAM.md 
+
 The purpose of this project is to implement a Pacman Autonomous Agent that can play and compete in the UoM Pacman Capture the Flag tournament_:
 
 ## Techniques used 
