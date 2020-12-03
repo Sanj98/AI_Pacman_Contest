@@ -79,6 +79,8 @@ In this method, the A* is built with a priority queue. With given goal states an
 
 The value iteration MDP was used in this method for escaping. As shown in the below image, the value iteration is conducted for the whole map every time. The position of the enemy and its adjacent blocks are set as -100. The mid-border blocks and capsule position are set as 100. Additionally, the blocks have walls in three out of four directions also has value -100. It is because we want the agent to avoid entering the dead-end alley while escaping. The pellet is not considered while escaping. More specifically, the discount of the MDP is set as '0.8', the noise is set as '0.2', and the reward for each step is set as 0. The value map below shows the value of each block after 100 iterations. The Q value of each state is calculated by: V = Sigma(P(s,s')*(R(s,s')+discount*V(s')).
 
+***Note: You can also check the video presentation of our team here https://youtu.be/2slht_ou7H0***
+
 ### Acknowledgements
 
 This is [Pacman Capture the Flag Contest](http://ai.berkeley.edu/contest.html) from the set of [UC Pacman Projects](http://ai.berkeley.edu/project_overview.html). 
