@@ -63,7 +63,8 @@ Our core strategy here is to be able to locate our opponents by calculating the 
 
 ### IV. MDP with A* (Both Offense and Defense)
 
-**A** 
+**A star** 
+
 In this method, the A* is built with a priority queue. With given goal states and current state, it will calculate the f(n) for each state. Then push the state in the priority queue with priority f(n). The queue will pop out one state every loop. The A* function will loop until the path to the goal was found or the priority queue is empty. It will return the first action of the found path or return random possible action if no possible path to the goal was found. The offence, defense, return and penetrate mode are using the A* searching function. But the heuristic function they use is different which are as follows - 
 
 1. **Offense mode**: The offense mode is the initial mode for agents. In the offense mode, the agent finds the closest pellet and heading to it. To avoid two agents target on the same pellet, each agent was assigned a preferred Y-axis value. As shown in the above image, the two white blocks are the target of two agents respectively. One prefers pellets with higher Y while another agent prefer lower Y. An important thing to apply A* search is the heuristic function. For this mode, the distance to enemy ghost and the distance to the pellet are considered when calculating the heuristic value. The heuristic is calculate by: H = Dist(Pos, Goal)*10 +Dist(Pos, Ghost)*(-10).
@@ -75,6 +76,7 @@ In this method, the A* is built with a priority queue. With given goal states an
 4. **Return mode**: The return mode is used when only two pellets left. The agent will set the closest mid-border block as the goal position, then applying the A* to find the path. The heuristic function is as the same as offence mode.
 
 **MDP** 
+
 The value iteration MDP was used in this method for escaping. As shown in the below image, the value iteration is conducted for the whole map every time. The position of the enemy and its adjacent blocks are set as -100. The mid-border blocks and capsule position are set as 100. Additionally, the blocks have walls in three out of four directions also has value -100. It is because we want the agent to avoid entering the dead-end alley while escaping. The pellet is not considered while escaping. More specifically, the discount of the MDP is set as '0.8', the noise is set as '0.2', and the reward for each step is set as 0. The value map below shows the value of each block after 100 iterations. The Q value of each state is calculated by: V = Sigma(P(s,s')*(R(s,s')+discount*V(s')).
 
 ### Acknowledgements
