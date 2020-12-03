@@ -2,11 +2,6 @@
 
 The purpose of this project is to implement a Pacman Autonomous Agent that can play and compete in the UoM Pacman Capture the Flag tournament_:
 
- <p align="center"> 
-    <img src="img/capture_the_flag.png" alt="logo project 2" width="400">
-    <img src="img/logo_unimelb.png" alt="logo project 2" width="155">
- </p>
-
 ## Techniques used 
 
 1. Q-learning
